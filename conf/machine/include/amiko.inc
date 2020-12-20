@@ -67,7 +67,21 @@ IMAGE_CMD_ubifs_prepend = " \
 	rm -Rf ${IMAGE_ROOTFS}/tmp/*; \
 	"
 
-MACHINE_FEATURES += "alsa usbhost wlan 3dtv switchoff osdposition hdmicec"
+MACHINE_FEATURES += "alsa usbhost wlan 3dtv switchoff osdposition hdmicec HDMI"
 
 require conf/machine/include/tune-mips32.inc
 require conf/machine/include/amiko-wifi.inc
+
+MTD_KERNEL = "mtd2"
+MTD_ROOTFS = "mtd0"
+KERNEL_FILE = "kernel.bin"
+ROOTFS_FILE = "rootfs.bin"
+
+SOC_FAMILY = "bcm73625"
+
+RCTYPE = "18"
+
+BOX_BRAND = "amiko"
+
+RCNAME ?= "amiko2"
+RCIDNUM ?= "1"
